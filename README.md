@@ -1,8 +1,18 @@
 # humanizer-cli
 
-A CLI wrapper for the [blader/humanizer](https://github.com/blader/humanizer) skill. Bundles the humanizer prompt with your text and outputs to stdout — pipe it to any LLM.
+A CLI wrapper for the [blader/humanizer](https://github.com/blader/humanizer) skill. Bundles the humanizer prompt with your text and outputs it to any LLM.
 
-No API calls. No dependencies. Just prompt + input → stdout.
+No API calls. No dependencies. Just prompt + input → output.
+
+## CLI vs skill: when to use which
+
+| | CLI (`humanizer-cli`) | Skill (`blader/humanizer`) |
+|---|---|---|
+| **Best for** | Automated pipelines, CI/CD, scripts | Interactive editing in Claude Code |
+| **Runs on** | Any machine with Node.js | Only where Claude Code skills are installed |
+| **How it works** | Bundles prompt + text → stdout, pipe to any LLM | Claude Code loads the skill and rewrites in-place |
+
+Use the **CLI** when you're running in production, on a server, or in any environment that doesn't have access to local Claude Code skills. Use the **skill** when you're working interactively in Claude Code on your own machine.
 
 ## Install
 
@@ -63,15 +73,6 @@ Humanize the following text:
 [your input text]
 ```
 
-## CLI vs skill — when to use which
-
-| | CLI (`humanizer-cli`) | Skill (`blader/humanizer`) |
-|---|---|---|
-| **Best for** | Automated pipelines, CI/CD, scripts | Interactive editing in Claude Code |
-| **Runs on** | Any machine with Node.js | Only where Claude Code skills are installed |
-| **How it works** | Bundles prompt + text → stdout, pipe to any LLM | Claude Code loads the skill and rewrites in-place |
-
-Use the **CLI** when you're running in production, on a server, or in any environment that doesn't have access to local Claude Code skills. Use the **skill** when you're working interactively in Claude Code on your own machine.
 
 ## References
 
